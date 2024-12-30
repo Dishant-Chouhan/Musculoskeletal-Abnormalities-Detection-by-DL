@@ -37,7 +37,6 @@ This project utilizes deep learning techniques to detect abnormalities in X-ray 
 
 ---
 
-## How to Run the Application
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/musculoskeletal-abnormalities-detection.git
+
+
+
