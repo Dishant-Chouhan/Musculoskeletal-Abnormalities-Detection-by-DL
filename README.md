@@ -2,7 +2,7 @@
 
 This project uses deep learning to detect abnormalities in X-ray images of various body parts such as the wrist, finger, humerus, forearm, and hand. The application is built using **Flask** and leverages TensorFlow/Keras for model inference.
 
-![Home Screen](static/screenshots/home.jpg)
+![Home Screen](home.jpg)
 *The Home Page of the Application*
 
 ---
@@ -17,7 +17,7 @@ This project uses deep learning to detect abnormalities in X-ray images of vario
   - Hand (XR_HAND)
 - **Confidence Score:** Each prediction is accompanied by a confidence level.
 
-![Prediction Page](static/screenshots/predict.jpg)
+![Prediction Page]predict.jpg)
 *The Prediction Results Page*
 
 ---
