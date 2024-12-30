@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results - Musculoskeletal Abnormalities Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Bootstrap CSS for extra styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('home') }}">Musculoskeletal Abnormalities Detection</a>
+            </div>
+        </nav>
+
+        <!-- Prediction Section -->
+        <section class="predict-container py-5 text-center">
+            <h1 class="display-4">X-ray Analysis</h1>
+            <p class="lead">Upload your X-ray image, select the type, and get accurate predictions.</p>
+
+            <form action="/predict" method="POST" enctype="multipart/form-data" class="shadow-lg p-4 bg-light rounded" style="max-width: 600px; margin: auto;">
+                <!-- X-ray Type -->
+                <div class="mb-4">
+                    <label for="model_name" class="form-label">Select X-ray Type:</label>
+                    <select name="model_name" id="model_name" class="form-select">
+                        <option value="XR_WRIST">Wrist</option>
+                        <option value="XR_FINGER">Finger</option>
+                        <option value="XR_HUMERUS">Humerus</option>
+                        <option value="XR_FOREARM">Forearm</option>
+                        <option value="XR_HAND">Hand</option>
+                    </select>
+                </div>
+
+                <!-- Upload Image -->
+                <div class="mb-4">
+                    <label for="xray_image" class="form-label">Upload X-ray Image:</label>
+                    <input type="file" name="xray_image" id="xray_image" class="form-control" accept="image/*" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit for Analysis</button>
+            </form>
+
+            {% if result %}
+            <!-- Results Section -->
+            <div class="card mx-auto mt-5 shadow-lg" style="max-width: 600px;">
+                <div class="card-body">
+                    <h3 class="card-title text-success">Analysis Results</h3>
+                    <p class="card-text"><strong>Issue Detected:</strong> {{ result.detected_issue }}</p>
+                    <p class="card-text"><strong>Confidence Level:</strong> {{ result.confidence_level }}%</p>
+                </div>
+            </div>
+
+            <!-- Return to Home Button -->
+            <div class="mt-4">
+                <a href="{{ url_for('home') }}" class="btn btn-secondary btn-lg">Return to Home</a>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+            <p>&copy; 2024 Musculoskeletal Abnormalities Detection | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

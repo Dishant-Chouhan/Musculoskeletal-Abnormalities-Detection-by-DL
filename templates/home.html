@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musculoskeletal Abnormalities Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Musculoskeletal Abnormalities Detection</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container text-center text-white py-5">
+                <h1 class="display-4">Detect Musculoskeletal Abnormalities</h1>
+                <p class="lead">Advanced machine learning to analyze X-ray images and provide accurate results.</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="image-intro py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Side: Image -->
+                    <div class="col-md-6 text-center">
+                        <img src="{{ url_for('static', filename='images/intro_image.webp') }}" alt="X-ray Intro Image" class="img-fluid rounded shadow-lg" style="max-width: 100%;">
+                    </div>
+                    <!-- Right Side: Overview -->
+                    <div class="col-md-6">
+                        <h2 class="mb-4">Overview of Our Project</h2>
+                        <p class="text-muted">
+                            Our system leverages advanced AI and machine learning algorithms to analyze X-ray images for musculoskeletal abnormalities. With a focus on precision and speed, we aim to assist healthcare professionals in making accurate diagnoses effortlessly.
+                        </p>
+                        <p class="text-muted">
+                            Key features include user-friendly analysis tools, detailed diagnostic results, and a confidence rating for each abnormality detected. Empowering medical teams with state-of-the-art technology, our project ensures better patient outcomes.
+                        </p>
+                        <a href="{{ url_for('predict') }}" class="btn btn-success btn-lg mt-3">Start Your Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step-by-Step Guide Section -->
+        <section class="step-guide py-5">
+            <div class="container text-center">
+                <h2>How It Works</h2>
+                <p class="text-muted mb-5">Follow these simple steps to get started:</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="step">
+                            <img src="{{ url_for('static', filename='images/step_upload_icon.png') }}" alt="Upload Icon" class="img-fluid mb-3">
+                            <h5>Upload Your X-ray</h5>
+                            <p>Select your X-ray file and upload it for analysis.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step">
+                            <img src="{{ url_for('static', filename='images/step_analysis_icon.png') }}" alt="Analysis Icon" class="img-fluid mb-3">
+                            <h5>AI Analyzes the Image</h5>
+                            <p>Our advanced AI model processes your X-ray.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step">
+                            <img src="{{ url_for('static', filename='images/step_results_icon.png') }}" alt="Results Icon" class="img-fluid mb-3">
+                            <h5>View the Results</h5>
+                            <p>Receive a detailed diagnosis and confidence level.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+            <p>&copy; 2024 Musculoskeletal Abnormalities Detection | By Dishant Chouhan</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
