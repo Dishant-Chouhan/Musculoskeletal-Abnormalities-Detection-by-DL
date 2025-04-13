@@ -39,6 +39,24 @@ This project utilizes deep learning techniques to detect abnormalities in X-ray 
 ### 🖼️ Image Processing:
 - **scikit-image** – Used for preprocessing and transforming medical images.
 
+## 🧠 Model Architecture
+
+The model is built on **InceptionResNetV2**, a powerful CNN architecture pre-trained on ImageNet and fine-tuned for binary classification of musculoskeletal X-ray images using the MURA dataset.
+
+**Architecture Summary:**
+
+- **🔗 Base Model**: InceptionResNetV2 (excluding top layers)
+- **🖼️ Input Shape**: (224, 224, 3)
+- **🧱 Added Layers**:
+  - Flatten layer
+  - Dense (256 units, ReLU activation)
+  - Dropout (rate: 0.5)
+  - Output Dense (2 units, Softmax activation)
+- **🧪 Optimizer**: RMSprop (learning rate = 0.0001)
+- **🧮 Loss Function**: Categorical Crossentropy
+- **📈 Training Methods**:
+  - Data augmentation
+  - Class weighting to handle imbalance
 ---
 
 ## 📥 Download Pretrained Models
